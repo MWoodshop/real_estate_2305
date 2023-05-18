@@ -25,4 +25,8 @@ class House
     end
     result
   end
+
+  def area
+    @rooms.sum { |room| room.area }
+  end
 end
