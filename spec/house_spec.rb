@@ -2,7 +2,7 @@ require './lib/room'
 require './lib/house'
 require 'pry'
 
-# Iteration 1
+# Iteration 2
 RSpec.describe Room do
   describe 'Iteration 2' do
     it 'exists' do
@@ -44,6 +44,23 @@ RSpec.describe Room do
       house.add_room(room_2)
 
       expect(house.rooms).to eq([room_1, room_2])
+    end
+  end
+
+  # Iteration 3
+  describe Room do
+    describe 'Iteration 3' do
+      it 'tests above_market_average? method in House class to return false' do
+        house = House.new('$400000', '123 sugar lane')
+
+        expect(house.above_market_average?).to eq(false)
+      end
+
+      it 'tests above_market_average? method in House class to return true' do
+        house = House.new('$500001', '123 sugar lane')
+
+        expect(house.above_market_average?).to eq(true)
+      end
     end
   end
 end
