@@ -30,6 +30,12 @@ class House
     @rooms.sum { |room| room.area }
   end
 
+  def price_per_square_foot
+    result = @price.gsub(/[^\d]/, '').to_i / area.to_f
+    formatted_result = format('%.2f', result)
+    formatted_result.to_f
+  end
+
   def details
     {
 
