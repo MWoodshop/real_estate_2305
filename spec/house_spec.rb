@@ -15,5 +15,10 @@ RSpec.describe Room do
       expect(house.price).to eq('$400000')
       expect(house.address).to eq('123 sugar lane')
     end
+
+    it 'returns an empty array on rooms' do
+      house = House.new('$400000', '123 sugar lane')
+      expect(house.rooms).to eq([])
+    end
   end
 end
