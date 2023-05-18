@@ -131,6 +131,18 @@ RSpec.describe Room do
 
         expect(house.area).to eq(1900)
       end
+
+      it 'tests details method' do
+        house = House.new('$400000', '123 sugar lane')
+
+        expect(house.details).to eq({ 'price' => 400_000, 'address' => '123 sugar lane' })
+      end
+
+      it 'tests details method 2' do
+        house = House.new('$5648100', '1600 Mockingbird Lane')
+
+        expect(house.details).to eq({ 'price' => 5_648_100, 'address' => '1600 Mockingbird Lane' })
+      end
     end
   end
 end
