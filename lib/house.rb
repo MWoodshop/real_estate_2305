@@ -29,4 +29,12 @@ class House
   def area
     @rooms.sum { |room| room.area }
   end
+
+  def details
+    {
+
+      'price' => @price.gsub(/[^\d]/, '').to_i,
+      'address' => @address
+    }
+  end
 end
